@@ -1,0 +1,11 @@
+.shop {
+   display: flex;
+}
+.shop-product {
+   width: 70%;
+   border-right: 1px solid lightgray;
+   margin-right: 5px;
+}
+.shop-cart {
+   width: 30%;
+}
