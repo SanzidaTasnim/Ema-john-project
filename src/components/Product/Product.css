@@ -12,6 +12,9 @@
    height: 300px;
    margin-bottom: 15px;
 }
+.product-info h3 {
+   color: rgb(59, 59, 130);
+}
 .product-info {
    width: 60%;
    margin-left: 10px;

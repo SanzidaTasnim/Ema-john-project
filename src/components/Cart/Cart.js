@@ -3,18 +3,18 @@ import './Cart.css';
 
 const Cart = (props) => {
    const cart = props.cart;
-   const totalPrice = cart.reduce((total,pd) => total + pd.price, 0);
+   const totalPrice = cart.reduce((total,pd) => total + (pd.price * pd.quantity), 0);
 
    let shipping = 12;
    if(totalPrice > 200) {
       shipping = 0;
    }else if(totalPrice > 100){
       shipping = 8;
-   }else if(totalPrice == 0){
+   }else if(totalPrice === 0){
       shipping = 0;
    }
 
-   const tax = totalPrice * 0.10 ;
+   const tax = Number((totalPrice * 0.10).toFixed(2)) ;
    const grandTotal = totalPrice + shipping + tax;
    
    return (
@@ -25,7 +25,9 @@ const Cart = (props) => {
          <h5>Tax & Vat: ${tax} </h5>
          <h5>Total Price: ${totalPrice} </h5>
          <h5>Subtotal: ${grandTotal}</h5>
-         <button className='reviewCart'>Review Your Order</button>
+         {
+            props.children
+         }
       </div>
    );
 };
